@@ -1,0 +1,34 @@
+:root {
+    --color-primary: #000000;    
+    --color-accent-blue: #00FFFF;  
+    --color-accent-green: #39FF14; 
+}
+
+
+body {
+    background-image: url(../img/fondo.jpg);
+    margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--color-accent-blue);
+}
+
+btn btn-primary btn-lg {
+    background-color: #1E90FF !important;
+    border-color: #1E90FF !important;
+
+}
+
+button a {
+    text-decoration: none;
+    color: #39FF14;
+}
+
