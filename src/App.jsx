@@ -13,6 +13,7 @@ import NavBar from './pages/NavBar'
 import NuevoProducto from './pages/NuevoProducto'
 import EditarProducto from './pages/EditarProducto'
 import ListaProducto from './pages/ListaProducto'
+import DetalleUsuario from './pages/DetalleUsuario'
 
 
 import { BrowserRouter ,Route,Routes } from "react-router-dom";
@@ -34,6 +35,7 @@ function App() {
           <Route path='/inicioSesion' element={<InicioSesion/>}/>
           <Route path='/editarUsuario' element={<EditarUsuario/>}/>
           <Route path='/listaUsuario' element={<Listausuario/>}/>
+          <Route path='/detalleUsuario' element={<DetalleUsuario/>}/>
           {
             // Rutas de Producto
           }

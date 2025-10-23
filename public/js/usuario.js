@@ -21,3 +21,4 @@ class Usuario {
         this.rol = rol;
     }
 }
+
