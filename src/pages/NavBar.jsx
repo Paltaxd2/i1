@@ -5,17 +5,18 @@ const NavBar = () => {
         
         if(!document.querySelector("script[src='https://cdn.jsdelivr.net/npm/sweetalert2@11.22.5/dist/sweetalert2.all.min.js']"))  {
             // Script 2
-            console.log("no esta cargado")
+            console.log("sweetalert2 no esta cargado")
             const sc = document.createElement("script")
             sc.src = "https://cdn.jsdelivr.net/npm/sweetalert2@11.22.5/dist/sweetalert2.all.min.js"
             sc.async = true
             document.body.appendChild(sc)
-
+        } else {
+            console.log("sweetalert2 ya esta cargado")
         }
         
         if(!document.querySelector("script[src='/js/productos.js']"))  {
             // Script 3
-            console.log("no esta cargado")
+            console.log("productos no esta cargado")
             const sc = document.createElement("script")
             sc.src = "/js/productos.js"
             sc.async = true
@@ -25,28 +26,34 @@ const NavBar = () => {
                     console.log("buscarEnTiempoReal esta cargado")
                 }
             }
+        } else {
+            console.log("productos ya esta cargado")
         }
 
         if(!document.querySelector("script[src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js']"))  {
             // Script 4
-            console.log("no esta cargado")
+            console.log("bootstrap no esta cargado")
             const sc = document.createElement("script")
             sc.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             sc.async = true
             document.body.appendChild(sc)
+        } else {
+            console.log("bootstrap ya esta cargado")
         }
 
         if(!document.querySelector("link[href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css']")){
             // Bootstrap CSS
-            console.log("no esta cargado")
+            console.log("bootstrap css no esta cargado")
             const link = document.createElement("link")
             link.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
             link.rel = "stylesheet"
             document.head.appendChild(link)
+        } else {
+            console.log("bootstrap css ya esta cargado")
         }
 
 
-    })
+    }, [])
     return(
         <header className="border-bottom sticky-top bg-white">
         <nav className="navbar navbar-expand-lg">

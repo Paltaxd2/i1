@@ -7,32 +7,38 @@ const InicioSesion = () => {
         // SweetAlert2
         if (!document.querySelector("script[src='https://cdn.jsdelivr.net/npm/sweetalert2@11.22.5/dist/sweetalert2.all.min.js']")) {
             // Script 2
-            console.log("no esta cargado")
+            console.log("Sweetalert2 no esta cargado 1")
             const sc = document.createElement("script")
             sc.src = "https://cdn.jsdelivr.net/npm/sweetalert2@11.22.5/dist/sweetalert2.all.min.js"
-            // sc.async = true
+            sc.async = true
             document.body.appendChild(sc)
+        } else {
+            console.log("Sweetalert2 Ya esta cargado")
         }
 
         // Archivos Js
         // Usuario.js
         if (!document.querySelector("script[src='/js/usuario.js']")) {
             // Carga 
-            console.log("no esta cargado")
+            console.log("Usuario no esta cargado 2")
             const sc = document.createElement("script")
             sc.src = "/js/usuario.js"
-            // sc.async = true
+            sc.async = true
             document.body.appendChild(sc)
+        } else {
+            console.log("Usuario Ya esta cargado")
         }
 
         // InicioSesion.js
         if (!document.querySelector("script[src='/js/inicioSesion.js']")){
-            console.log("no esta cargado")
+            console.log("IncioSesion no esta cargado 3")
             const sc = document.createElement("script")
             sc.src = "/js/inicioSesion.js"
             document.body.appendChild(sc)
+        } else {
+            console.log("IncioSesion Ya esta cargado")
         }
-    })
+    }, [])
     return (
         <>
             <header>

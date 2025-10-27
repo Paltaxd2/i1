@@ -6,27 +6,31 @@ const EditarProducto = () => {
         // SweetAlert2
         if (!document.querySelector("script[src='https://cdn.jsdelivr.net/npm/sweetalert2@11.22.5/dist/sweetalert2.all.min.js']")) {
             // Script 2
-            console.log("no esta cargado")
+            console.log("Sweetalert2 no esta cargado")
             const sc = document.createElement("script")
             sc.src = "https://cdn.jsdelivr.net/npm/sweetalert2@11.22.5/dist/sweetalert2.all.min.js"
             sc.async = true
             document.body.appendChild(sc)
+        } else {
+            console.log("Sweetalert2 ya esta cargado")
         }
 
         // Scripts Producto
         // Producto
         if (!document.querySelector("script[src='/js/producto.js']")) {
             // Carga 
-            console.log("no esta cargado")
+            console.log("Producto no esta cargado")
             const sc = document.createElement("script")
             sc.src = "/js/producto.js"
             sc.async = true
             document.body.appendChild(sc)
+        } else {
+            console.log("Producto ya esta cargado")
         }
 
         // Editar Producto
         if (!document.querySelector("script[src='/js/editarProducto.js']")) {
-            console.log("no esta cargado")
+            console.log("Producto no esta cargado")
             const sc = document.createElement("script")
             sc.src = "/js/editarProducto.js"
             sc.async = true
@@ -36,8 +40,10 @@ const EditarProducto = () => {
                     console.log("mostrarVistaPrevia esta cargado")
                 }
             }
+        } else {
+            console.log("Producto ya esta cargado")
         }
-    })
+    }, [])
     return (
         <>
             <header>
@@ -49,53 +55,53 @@ const EditarProducto = () => {
                     <table>
                         <tbody>
                             <tr>
-                                <td colspan="2">
-                                    <label for="txtNombre">Nombre del Producto:</label>
+                                <td colSpan="2">
+                                    <label id="txtNombre">Nombre del Producto:</label>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
+                                <td colSpan="2">
                                     <input type="text" id="txtNombre" name="txtNombre" />
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
-                                    <label for="txtDescripcion">Descripción del Producto:</label>
+                                <td colSpan="2">
+                                    <label id="txtDescripcion">Descripción del Producto:</label>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
+                                <td colSpan="2">
                                     <textarea id="txtDescripcion" name="txtDescripcion"></textarea>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
-                                    <label for="numPrecio">Precio del Producto ($):</label>
+                                <td colSpan="2">
+                                    <label id="numPrecio">Precio del Producto ($):</label>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
+                                <td colSpan="2">
                                     <input type="number" id="numPrecio" name="numPrecio" step="0.01" />
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
-                                    <label for="imgImagen">Imagen del Producto:</label>
+                                <td colSpan="2">
+                                    <label id="imgImagen">Imagen del Producto:</label>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
+                                <td colSpan="2">
                                     <input type="file" id="imgImagen" name="imgImagen" accept="image/*" onChange={(e) => window.mostrarVistaPrevia && window.mostrarVistaPrevia(e)} />
                                     <img id="vista-previa" alt="Vista previa de imagen" />
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
-                                    <label for="numCantidad">Cantidad del Producto:</label>
+                                <td colSpan="2">
+                                    <label id="numCantidad">Cantidad del Producto:</label>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
+                                <td colSpan="2">
                                     <input type="number" id="numCantidad" name="numCantidad" />
                                 </td>
                             </tr>

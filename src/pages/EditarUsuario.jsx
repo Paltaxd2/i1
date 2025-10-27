@@ -6,32 +6,38 @@ const EditarUsuario = () => {
         // SweetAlert2
         if (!document.querySelector("script[src='https://cdn.jsdelivr.net/npm/sweetalert2@11.22.5/dist/sweetalert2.all.min.js']")) {
             // Script 2
-            console.log("no esta cargado")
+            console.log("Sweetalert2 no esta cargado")
             const sc = document.createElement("script")
             sc.src = "https://cdn.jsdelivr.net/npm/sweetalert2@11.22.5/dist/sweetalert2.all.min.js"
             sc.async = true
             document.body.appendChild(sc)
+        } else {
+            console.log("Sweetalert2 ya esta cargado")
         }
 
         // Archivos Js
         // Usuario.js
         if (!document.querySelector("script[src='/js/usuario.js']")) {
             // Carga 
-            console.log("no esta cargado")
+            console.log("Usuario no esta cargado")
             const sc = document.createElement("script")
             sc.src = "/js/usuario.js"
             sc.async = true
             document.body.appendChild(sc)
+        } else {
+            console.log("Usuario ya esta cargado")
         }
 
         if (!document.querySelector("script[src='/js/editarUsuario.js']")) {
-            console.log("no esta cargado")
+            console.log("EditarUsuario no esta cargado")
             const sc = document.createElement("script")
             sc.src = "/js/editarUsuario.js"
             sc.async = true
             document.body.appendChild(sc)
+        } else {
+            console.log("EditarUsuario ya esta cargado")
         }
-    })
+    }, [])
     return (
         <>
             <header>

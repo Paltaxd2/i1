@@ -21,8 +21,7 @@ function cargarLista() {
             tabla += "<td>" + item.comuna + "</td>"
             tabla += "<td>" + item.rol + "</td>"
             tabla += "<td> <input type='button' value='Descripcion Usuario' onclick='btnResp(" + item.id + ", " + 1 + ")'> </td>"
-            tabla += "<td> <input type='button' value='Editar Usuario' onclick='btnResp(" + item.id + ", " + 2 + ")'> </td>"
-            tabla += "<td> <input type='button' value='Eliminar Usuario' onclick='btnResp(" + item.id + ", " + 3 + ")'> </td>"
+            tabla += "<td> <input type='button' value='Eliminar Usuario' onclick='btnResp(" + item.id + ", " + 2 + ")'> </td>"
             tabla += "</tr>"
         })
         tabla += "</tbody>"
@@ -75,11 +74,10 @@ function btnResp(idUser, val){
         countPosi ++;
     })
     countPosi = 0;
+    
     if(val === 1){
-        location.href='/editarUsuario'
+        location.href='/detalleUsuario'
     } else if(val === 2){
-        location.href='/editarUsuario'
-    } else if(val === 3){
         eliminar(posicionUsuario)
     }
 }

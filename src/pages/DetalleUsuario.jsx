@@ -9,8 +9,18 @@ const DetalleUsuario = () => {
             sc.src = "/js/detalleUsuario.js"
             sc.async = true
             document.body.appendChild(sc)
+            onload = () => {
+                if (btnActualizarUsuario) {
+                    console.log("Actualizar Usuario Funciona")
+                }
+                if (btnHistorialCompras) {
+                    console.log("Historial de Compras Funciona")
+                }
+            }
+        } else {
+            console.log("Ya esta cargado")
         }
-    })
+    }, [])
     return (
         <div id="DetalleUsuario">
             <h1 id="TituloDet">Detalle Usuario</h1>
@@ -55,8 +65,8 @@ const DetalleUsuario = () => {
                     </tr>
 
                     <tr>
-                        <td><input type="button" value="Actualizar Usuario" /></td>
-                        <td><input type="button" value="Historial de Compras" /></td>
+                        <td><input type="button" value="Actualizar Usuario" onClick={() => btnActualizarUsuario()} /></td>
+                        <td><input type="button" value="Historial de Compras" onClick={() => btnHistorialCompras()} /></td>
                     </tr>
 
                 </tbody>

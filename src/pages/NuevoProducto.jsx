@@ -8,27 +8,31 @@ const NuevoProducto = () => {
         // SweetAlert2
         if (!document.querySelector("script[src='https://cdn.jsdelivr.net/npm/sweetalert2@11.22.5/dist/sweetalert2.all.min.js']")) {
             // Script 2
-            console.log("no esta cargado")
+            console.log("Sweetalert2 no esta cargado")
             const sc = document.createElement("script")
             sc.src = "https://cdn.jsdelivr.net/npm/sweetalert2@11.22.5/dist/sweetalert2.all.min.js"
             sc.async = true
             document.body.appendChild(sc)
+        } else {
+            console.log("Sweetalert2 ya esta cargado")
         }
 
         // Scripts Producto
         // Producto
         if (!document.querySelector("script[src='/js/producto.js']")) {
             // Carga 
-            console.log("no esta cargado")
+            console.log("Producto no esta cargado")
             const sc = document.createElement("script")
             sc.src = "/js/producto.js"
             sc.async = true
             document.body.appendChild(sc)
+        } else {
+            console.log("Producto ya esta cargado")
         }
 
         // Nuevo Producto
         if (!document.querySelector("script[src='/js/nuevoProducto.js']")) {
-            console.log("no esta cargado")
+            console.log("NuevoProducto no esta cargado")
             const sc = document.createElement("script")
             sc.src = "/js/nuevoProducto.js"
             sc.async = true
@@ -37,9 +41,14 @@ const NuevoProducto = () => {
                 if (window.mostrarVistaPrevia) {
                     console.log("mostrarVistaPrevia esta cargado")
                 }
+                if (window.camCate){
+                    console.log("Cambio de categoria cargado")
+                }
             }
+        } else {
+            console.log("NuevoProducto ya esta cargado")
         }
-    })
+    }, [])
     return (
         <>
             <header>
@@ -91,6 +100,7 @@ const NuevoProducto = () => {
                                         <img id="vista-previa" alt="Vista previa de imagen" />
                                     </td>
                                 </tr>
+
                                 <tr>
                                     <td colSpan="2">
                                         <label id="labelCantidad">Cantidad del Producto:</label>
@@ -101,6 +111,32 @@ const NuevoProducto = () => {
                                         <input type="number" id="numCantidad" name="numCantidad" required />
                                     </td>
                                 </tr>
+
+                                <tr>
+                                    <td>
+                                        <label id="labelCantCrit">Cantidad Critica: </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colSpan={2}>
+                                        <input type="number" name="numCantCrit" id="numCantCrit" required/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colSpan="2">
+                                        Categoria :
+                                        <select name="selCat" id="selCat" onChange={(e => window.camCate(e.target))}>
+                                            <option value="NoCategoria">Seleccione una Categoria</option>
+                                            <option value="1">Productos</option>
+                                            <option value="2">Consolas</option>
+                                            <option value="3">Accesorios</option>
+                                            <option value="4">Juegos de Mesa</option>
+                                            <option value="5">Gundam</option>
+                                        </select>
+                                    </td>
+                                </tr>
+
                                 <tr>
                                     <td>
                                         <button type="submit">Guardar Producto</button>

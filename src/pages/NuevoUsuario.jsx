@@ -26,13 +26,15 @@ const NuevoUsuario = () => {
 
         // NuevoUsuario.js
         if (!document.querySelector("script[src='/js/nuevoUsuario.js']")) {
-            console.log("no esta cargado")
+            console.log("NuevoUsuario no esta cargado")
             const sc = document.createElement("script")
             sc.src = "/js/nuevoUsuario.js"
             sc.async = true
             document.body.appendChild(sc)
+        } else {
+            console.log("NuevoUsuario ya esta cargado")
         }
-    })
+    }, [])
     return (
         <>
             <header>

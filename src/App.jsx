@@ -14,6 +14,8 @@ import NuevoProducto from './pages/NuevoProducto'
 import EditarProducto from './pages/EditarProducto'
 import ListaProducto from './pages/ListaProducto'
 import DetalleUsuario from './pages/DetalleUsuario'
+import DetalleProducto from './pages/DetalleProducto'
+import ListadoProductoCritico from './pages/ListadoProductoCritico'
 
 
 import { BrowserRouter ,Route,Routes } from "react-router-dom";
@@ -23,7 +25,7 @@ function App() {
   return (
     <>
       {
-        <NavBar/>
+        //<NavBar/>
       }
       <BrowserRouter>
         <Routes>
@@ -42,6 +44,8 @@ function App() {
           <Route path='/nuevoProducto' element={<NuevoProducto/>}/>
           <Route path='/editarProducto' element={<EditarProducto/>}/>
           <Route path='/listaProducto' element={<ListaProducto/>}/>
+          <Route path='/detalleProducto' element={<DetalleProducto/>}/>
+          <Route path='/listProduCritico' element={<ListadoProductoCritico/>}/>
         </Routes>
       </BrowserRouter>
     </>
