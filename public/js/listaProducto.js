@@ -22,15 +22,15 @@ function cargarLista() {
         }
     });
     } else {
-        var tabla = "<table>"
+        var tabla = "<table id='tabProdu'>"
         tabla += "<thead>"
         tabla += "<t>"
         tabla += "<th scope=col>Id</th> <th scope=col>Nombre</th> <th scope=col>Descripcion</th> <th scope=col>Precio</th> <th scope=col>Cantidad</th>  <th scope=col>Cantidad Critica</th> <th scope=col>Categoria</th> <th scope=col>Imagen</th> <th scope=col>Detalle</th> <th scope=col>Eliminar</th>"
         tabla +="</tr>"
         tabla += "</thead>"
-        tabla += "<tbody>"
+        tabla += "<tbody id='cuerpTablaProdu'>"
         stockGuardado.forEach(item => {
-            tabla += "<tr>"
+            tabla += "<tr id='bordeProduList'>"
             tabla += "<th scope=row>" + item.id + "</th>"
             tabla += "<td>" + item.nombre + "</td>"
             tabla += "<td>" + item.descripcion + "</td>"
@@ -45,9 +45,11 @@ function cargarLista() {
         })
         tabla += "</tbody>"
         tabla += "</table>"
+        tabla += "<div id='btnOpciones'>"
         tabla += "<input type='button' value='Nuevo Producto' onclick='opLista( " + 0 + ")'>"
         tabla += "<input type='button' value='Listado Productos Criticos' onclick='opLista( " + 1 + ")'>"
         tabla += "<input type='button' value='Reportes' onclick='opLista( " + 2 + ")'>"
+        tabla += "</div>"
         document.getElementById("tablaProductos").innerHTML = tabla
     }
 }

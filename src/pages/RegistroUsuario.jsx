@@ -58,40 +58,38 @@ const RegistroUsuario = () => {
 
     return (
         <>
-            <header>
-                <h1>Registrar Usuario</h1>
-            </header>
             <main>
                 <section>
+                    <h1 id='regUsuTitulo'>Registrar Usuario</h1>
                     <form id="formulario-producto">
-                        <table>
-                            <tbody>
+                        <table id='tabRegUsu'>
+                            <tbody id='tabBodRegUsu'>
 
                                 <tr>
                                     <td colSpan="2">
-                                        <label id="labelNombre">Nombre Completo</label>
+                                        <label className='estLab' id="labelNombre">Nombre Completo</label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colSpan="2">
-                                        <input type="text" id="txtNombre" name="txtNombre" required maxLength={50} />
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td colSpan="2">
-                                        <label id="labelRut">RUT</label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colSpan="2">
-                                        <input type="text" id="txtRut" name="txtRut" required maxLength={10} />
+                                        <input className='inpText' type="text" id="txtNombre" name="txtNombre" required maxLength={50} />
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <td colSpan="2">
-                                        <label id="labelCorreo">Correo</label>
+                                        <label className='estLab' id="labelRut">RUT</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="2">
+                                        <input className='inpText' type="text" id="txtRut" name="txtRut" required maxLength={10} />
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colSpan="2">
+                                        <label className='estLab' id="labelCorreo">Correo</label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -102,7 +100,7 @@ const RegistroUsuario = () => {
 
                                 <tr>
                                     <td colSpan="2">
-                                        <label id="labelCorreoConfirm">Confirmar Correo</label>
+                                        <label className='estLab' id="labelCorreoConfirm">Confirmar Correo</label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -113,7 +111,7 @@ const RegistroUsuario = () => {
 
                                 <tr>
                                     <td colSpan="2">
-                                        <label id="labelPass">Contraseña</label>
+                                        <label className='estLab' id="labelPass">Contraseña</label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -124,7 +122,7 @@ const RegistroUsuario = () => {
 
                                 <tr>
                                     <td colSpan="2">
-                                        <label id="labelPassConfirm">Confirmar Contraseña</label>
+                                        <label className='estLab' id="labelPassConfirm">Confirmar Contraseña</label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -135,7 +133,7 @@ const RegistroUsuario = () => {
 
                                 <tr>
                                     <td colSpan="2">
-                                        <label id="labelTel">Numero Telefonico (Opcional)</label>
+                                        <label className='estLab' id="labelTel">Numero Telefonico (Opcional)</label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -143,14 +141,14 @@ const RegistroUsuario = () => {
                                         <p>+ 56 9</p>
                                     </td>
                                     <td>
-                                        <input type="text" name="numTel" id="numTel" />
+                                        <input className='inpText' type="text" name="numTel" id="numTel" />
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <td>
                                         Region :
-                                        <select name="selRegion" id="selRegion" onChange={(e) => window.cambioComuna && window.cambioComuna(e.target)}>
+                                        <select className='selRegUsu' name="selRegion" id="selRegion" onChange={(e) => window.cambioComuna && window.cambioComuna(e.target)}>
                                             <option value="Sin Region">Seleccione una Region</option>
                                             <option value="Metropolitana">Metropolitana</option>
                                             <option value="Valparaiso">Valparaiso</option>
@@ -162,7 +160,7 @@ const RegistroUsuario = () => {
                                     </td>
                                     <td>
                                         Comuna :
-                                        <select name="selComuna" id="selComuna" onChange={(e) => window.valorComuna && window.valorComuna(e.target)}>
+                                        <select className='selRegUsu' name="selComuna" id="selComuna" onChange={(e) => window.valorComuna && window.valorComuna(e.target)}>
                                             <option value="1">Falta Region</option>
                                         </select>
                                     </td>

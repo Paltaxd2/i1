@@ -29,6 +29,7 @@ body {
     text-shadow: 0 0 15px rgba(30, 144, 255, 0.7);
   }
 
+  /*
   section {
     background-color: #111111;
     padding: 30px 40px;
@@ -36,6 +37,7 @@ body {
     box-shadow: 0 0 20px rgba(30, 144, 255, 0.4);
     width: 100%;
   }
+    */
 
   section h2 {
     font-family: 'Roboto', sans-serif;

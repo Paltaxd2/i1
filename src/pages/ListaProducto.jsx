@@ -47,9 +47,9 @@ const ListaProducto = () => {
 
     return (
             
-            <main>
-                <h1 className="display-1">Tabla de Productos</h1>
-                <section>
+            <main id="mainListProdu">
+                <h1 id="tituTabProdu">Tabla de Productos</h1>
+                <section id="secTabProdu">
                     <div id="tablaProductos"></div>
                 </section>
             </main>
