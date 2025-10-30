@@ -1,4 +1,4 @@
-import '../css/listaUsuarioEstilo.css'
+// import '../css/listaUsuarioEstilo.css'
 import { useEffect } from 'react';
 
 const Listausuario = () => {

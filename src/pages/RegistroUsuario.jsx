@@ -1,4 +1,4 @@
-import '../css/registroUsuarioEstilo.css'
+// import '../css/registroUsuarioEstilo.css'
 import { useEffect } from 'react';
 
 const RegistroUsuario = () => {

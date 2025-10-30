@@ -1,4 +1,4 @@
-import "../css/editarUsuarioEstilo.css"
+// import "../css/editarUsuarioEstilo.css"
 import { useEffect } from "react";
 
 const EditarUsuario = () => {

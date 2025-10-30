@@ -269,6 +269,8 @@ function cambioComuna(select) {
         option.value = i + 1;
         option.text = comunaNombre;
         selComuna.appendChild(option);
+        console.log(option.value)
+        console.log(option.text)
     });
     comuna = "";
 
