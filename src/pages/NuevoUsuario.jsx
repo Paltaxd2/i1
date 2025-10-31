@@ -1,4 +1,4 @@
-import "../css/nuevoUsuarioEstilo.css"
+// import "../css/nuevoUsuarioEstilo.css"
 import { useEffect } from "react"
 
 const NuevoUsuario = () => {

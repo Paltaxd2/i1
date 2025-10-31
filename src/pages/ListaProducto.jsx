@@ -1,4 +1,4 @@
-import "../css/listaProductoEstilo.css"
+// import "../css/listaProductoEstilo.css"
 import { useEffect } from "react";
 
 const ListaProducto = () => {

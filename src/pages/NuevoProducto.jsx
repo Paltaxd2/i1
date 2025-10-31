@@ -1,4 +1,4 @@
-import "../css/nuevoProductoEstilo.css"
+// import "../css/nuevoProductoEstilo.css"
 import { use, useEffect } from "react";
 
 // SI

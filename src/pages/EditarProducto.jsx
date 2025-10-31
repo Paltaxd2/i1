@@ -1,4 +1,4 @@
-import "../css/editarProductoEstilo.css"
+// import "../css/editarProductoEstilo.css"
 import { useEffect } from "react";
 
 const EditarProducto = () => {
