@@ -8,3 +8,11 @@ describe("Probando a Iniciar Sesion", () => {
         expect(screen.getByRole('button', {name:/Iniciar Sesion/i})).toBeInTheDocument();
     })
 })
+/*
+describe("Probando Fallo Inicio Sesion", () => {
+    it('render ', () => {
+        render(<InicioUsuario />);
+        expect(await screen.getByText())
+    })
+})
+    */
