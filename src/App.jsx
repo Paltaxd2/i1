@@ -21,6 +21,8 @@ import DetalleProducto from './pages/DetalleProducto'
 import ListadoProductoCritico from './pages/ListadoProductoCritico'
 import Categorias from './pages/Categorias'
 import Compra from './pages/Compra'
+import Footer from './pages/Footer'
+import Home from './pages/Home'
 
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -34,6 +36,10 @@ function App() {
       }
       <BrowserRouter>
         <Routes>
+          {
+            // Home
+          }
+          <Route path='/' element={<Home/>}/>
           {
             // Rutas de Usuario
           }
@@ -68,6 +74,7 @@ function App() {
           <Route path='/pruebas' element={<Pruebas />} />
         </Routes>
       </BrowserRouter>
+      <Footer/>
     </>
   )
 }

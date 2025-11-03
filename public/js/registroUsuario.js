@@ -251,6 +251,7 @@ function valorComuna(select) {
         if (numComuna >= 1 && numComuna <= 5) {
             numComuna = numComuna - 1;
             comuna = comuRegi[region][numComuna];
+            console.log(comuna);
         }
     }
 }

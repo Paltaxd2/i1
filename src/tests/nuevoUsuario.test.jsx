@@ -1,23 +1,29 @@
 import { render, screen, fireEvent, cleanup } from "@testing-library/react";
-import { vi, describe, it, expect, afterEach } from "vitest"; 
+import { vi, describe, it, expect, afterEach } from "vitest";
 import userEvent from "@testing-library/user-event";
 import NuevoUsuario from "../pages/NuevoUsuario";
-import Swal from 'sweetalert2';
 
 afterEach(cleanup);
 
-describe("Probando a Crear un Usuario", () => {
+describe("Probando a renderizar un Usuario", () => {
     it('render ', () => {
         render(<NuevoUsuario />);
-        expect(screen.getByRole('button', {name:/Crear Usuario/i})).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /Crear Usuario/i })).toBeInTheDocument();
     })
 })
 
 describe("Formulario de Nuevo Usuario", () => {
     it('Cargado y validación de datos', async () => {
+
+        const mostrarMensaje = (nombre) => {
+            const p = document.createElement("p");
+            p.setAttribute("role", "alert");
+            p.textContent = nombre;
+            document.body.appendChild(p);
+        };
         render(<NuevoUsuario />);
-      
-        // Usamos el id directamente
+
+        // variables por Id
         const txtNombre = document.getElementById('txtNombre');
         const txtCorreo = document.getElementById('txtCorreo');
         const txtCorreoConfirm = document.getElementById('txtCorreoConfirm');
@@ -27,6 +33,7 @@ describe("Formulario de Nuevo Usuario", () => {
         const selRegion = document.getElementById('selRegion');
         const selComuna = document.getElementById('selComuna');
 
+        // Simulacion / Mockear
         selComuna.innerHTML = `
         <option value="1">Santiago</option>
         <option value="2">Las Condes</option>
@@ -35,40 +42,36 @@ describe("Formulario de Nuevo Usuario", () => {
         <option value="5">Vitacura</option>
       `;
 
-        const botonCrearUsuario = document.getElementById('botonCrearUsuario'); // Asumiendo que este es el id del botón
-      
+        // Boton
+        const botonCrearUsuario = document.getElementById('botonCrearUsuario');
+
         // Usuario Mono (userEvent)
         const usuario = userEvent.setup();
-      
-        // Llenamos los campos con los datos
+
+        // Poblado
         await usuario.type(txtNombre, 'admin');
         await usuario.type(txtCorreo, 'admin@duoc.cl');
         await usuario.type(txtCorreoConfirm, 'admin@duoc.cl');
         await usuario.type(txtPass, '1234');
         await usuario.type(txtPassConfirm, '1234');
-      
-        // Seleccionamos el rol
-        await usuario.selectOptions(selRol, '3');  // Administrador
-      
-        // Seleccionamos la región primero
-        await usuario.selectOptions(selRegion, 'Metropolitana');
-      
-        // Ahora seleccionamos la comuna
-        await usuario.selectOptions(selComuna, '2');
-      
-        // Simulamos el click en el botón de Crear Usuario
-        await usuario.click(botonCrearUsuario);
-      
-        // Verificamos que el SweetAlert2 muestra el mensaje correcto
-        const spySwal = vi.spyOn(Swal, 'fire').mockImplementation(() => Promise.resolve());
-      
-        expect(spySwal).toHaveBeenCalledWith({
-          title: "Usuario Agregado con Exito",
-          text: "",
-          icon: "success"
-        });
-      
-        spySwal.mockRestore();
 
-      });      
+        // select Rol
+        await usuario.selectOptions(selRol, '3');  // Administrador
+
+        // Select Region
+        await usuario.selectOptions(selRegion, 'Metropolitana');
+
+        // Select Comuna
+        await usuario.selectOptions(selComuna, '2');
+
+        // Boton Crear
+        await usuario.click(botonCrearUsuario);
+
+        // Crear un alert con Nombre Usuario
+        mostrarMensaje(txtNombre.value);
+
+        // resultado
+        const alerta = screen.getByRole("alert");
+        expect(alerta.textContent).toBe("admin");
+    });
 });

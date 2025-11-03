@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 const NavBar = () => {
     useEffect(() => {
-
+        // Productos
         if (!document.querySelector("script[src='/js/productos.js']")) {
             // Script 3
             console.log("productos no esta cargado")
@@ -18,7 +18,6 @@ const NavBar = () => {
         } else {
             console.log("productos ya esta cargado")
         }
-
         if (!document.querySelector("script[src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js']")) {
             // Script 4
             console.log("bootstrap no esta cargado")
